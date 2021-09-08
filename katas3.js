@@ -167,9 +167,10 @@ function kata14() {
 
 function kata15() {
     const resultado = document.createElement('p')
-    for(let i=1; i<21; i++){
-       for(let k=1; k<21; k++)
-       resultado.innerText += i + k + " "
+    let soma = 1
+    for(let i=2; i<21; i++){
+       soma =  soma + i
+       resultado.innerText = soma
     }
     
     append("kata15",resultado)
@@ -177,9 +178,10 @@ function kata15() {
 
 function kata16() {
     const resultado = document.createElement('p')
-    for(let i=0; i<sampleArray.length; i++){
-       for(let k=0; k<sampleArray.length; k++)
-     resultado.innerText += sampleArray[k]+sampleArray[i] + " "
+    let soma = sampleArray[0]
+    for(let i=1; i<sampleArray.length; i++){
+       soma += sampleArray[i]
+     resultado.innerText = soma
         }
     
     append("kata16",resultado)
@@ -187,13 +189,25 @@ function kata16() {
 
 function kata17() {
     const resultado = document.createElement('p')
-    resultado.innerText = Math.min(...sampleArray)
+    let menor = sampleArray[0]
+    for (let i = 1; i <sampleArray.length; i++){
+      if( sampleArray[i] < menor){
+          menor = sampleArray[i]
+      }
+    resultado.innerText = menor
+    }
     append("kata17",resultado)
 }
 
 function kata18() {
     const resultado = document.createElement('p')
-    resultado.innerText = Math.max(...sampleArray)
+    let maior = sampleArray[0]
+    for (let i = 1; i <sampleArray.length; i++){
+      if( sampleArray[i] > maior){
+          maior = sampleArray[i]
+      }
+    resultado.innerText = maior
+    }
     append("kata18",resultado)
 }
 
@@ -221,4 +235,4 @@ function kataBonus5() {
     // implemente o código do kata bonus 5 aqui
 }
 
-document.getElementById("Clique").onclick = showResults
+document.getElementById("Clique").addEventListener('click',showResults)
