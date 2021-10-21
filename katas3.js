@@ -19,6 +19,11 @@ function showResults(){
     kata16()  
     kata17() 
     kata18()
+    kataBonus1()
+    kataBonus2()
+    kataBonus3()
+    kataBonus4()
+    kataBonus5()
 }
 
 function append (kata,resultado){
@@ -216,23 +221,71 @@ function kata18() {
  */
 
 function kataBonus1() {
-    // implemente o código do kata bonus 1 aqui
+    for(let i=0;i<20;i++){
+    const result = document.createElement('div')
+    result.style.height = '20px'
+    result.style.width = '100px'
+    result.style.backgroundColor = 'grey'
+    result.style.marginTop = '5px'
+    append('Katabonus1', result)
+}
 }
 
 function kataBonus2() {
-    // implemente o código do kata bonus 2 aqui
+    let contador = 0
+    for(let i=0;i<20;i++){
+        contador += 5
+        const result = document.createElement('div')
+        result.style.height = '20px'
+        result.style.width = 100 + contador + 'px'
+        result.style.backgroundColor = 'grey'
+        result.style.marginTop = '5px'
+        append('Katabonus2', result)
+    }
 }
 
 function kataBonus3() {
-    // implemente o código do kata bonus 3 aqui
+    for(let i=0;i<20;i++){
+        contador = sampleArray[i]
+        const result = document.createElement('div')
+        result.style.height = '20px'
+        result.style.width = contador + 'px'
+        result.style.backgroundColor = 'grey'
+        result.style.marginTop = '5px'
+        append('Katabonus3', result)
+    }
 }
 
 function kataBonus4() {
-    // implemente o código do kata bonus 4 aqui
+    for(let i=0;i<20;i++){
+       let cor = 'grey'
+        if(i % 2 == 0){
+            cor = 'red'
+        }
+        contador = sampleArray[i]
+        const result = document.createElement('div')
+        result.style.height = '20px'
+        result.style.width = contador + 'px'
+        result.style.backgroundColor = cor
+        result.style.marginTop = '5px'
+        append('Katabonus4', result)
+    }
 }
 
 function kataBonus5() {
-    // implemente o código do kata bonus 5 aqui
+    for(let i=0;i<20;i++){
+        let cor = 'grey'
+        contador = sampleArray[i]
+        if(contador % 2 == 0){
+            cor = 'red'
+        }
+        const result = document.createElement('div')
+        result.style.height = '20px'
+        result.style.width = contador + 'px'
+        result.style.backgroundColor = cor
+        result.style.marginTop = '5px'
+        append('Katabonus5', result)
+    }
 }
 
 document.getElementById("Clique").addEventListener('click',showResults)
